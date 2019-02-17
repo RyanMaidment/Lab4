@@ -1,17 +1,21 @@
+import java.util.Random;
 
 public class ChequingAccount extends BankAccount {
-
-	private double fee;
+	
+	Random rnd = new Random();
+	private double fee = 1+rnd.nextInt(5);
 
 	public String toString() {
-
-		return null;
+		
+		String fee = super.toString() + ""+this.fee+"";
+		
+		return fee;
 
 	}
 
 	@Override
 	public void calculateAndUpdateBalance() {
-
+		this.balance -= fee;
 	}
 
 }
