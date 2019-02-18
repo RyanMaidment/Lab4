@@ -1,16 +1,11 @@
-import java.util.Random;
 
 public class ChequingAccount extends BankAccount {
-	
-	Random rnd = new Random();
-	private double fee = 1+rnd.nextInt(5);
 
+	protected double fee = 1 + rnd.nextInt(5);
+
+	@Override
 	public String toString() {
-		
-		String fee = super.toString() + ""+this.fee+"";
-		
-		return fee;
-
+		return "Chequing Account: Fee = " + df.format(fee) + ", " + super.toString() + " ";
 	}
 
 	@Override

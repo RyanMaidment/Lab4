@@ -5,15 +5,17 @@ public class BankAccountTest {
 	BankAccount[] accounts;
 
 	public BankAccountTest() {
-	
+
 		accounts = new BankAccount[5];
 
-		accounts[0] = new ChequingAccount();
-		accounts[1] = new ChequingAccount();
-		accounts[2] = new ChequingAccount();
-		accounts[3] = new SavingsAccount();
-		accounts[4] = new SavingsAccount();
+		for (int i = 0; i < 5; i++) {
 
+			if (i < 3) {
+				accounts[i] = new ChequingAccount();
+			} else if (i > 2) {
+				accounts[i] = new SavingsAccount();
+			}
+		}
 	}
 
 	public void monthlyProcess(BankAccount[] accounts) {
@@ -22,27 +24,27 @@ public class BankAccountTest {
 		}
 	}
 
-	public void display(BankAccount[] accounts) {
+	public void display() {
 		DecimalFormat df = new DecimalFormat("$###.##");
-		for (int i = 0; i < accounts.length; i++) {
 
-			String accountNum = accounts[i].getClass().getSimpleName();
-			accountNum = accountNum.substring(0, accountNum.indexOf('A')) + " Account " + (i + 1) + " Balance: ";
-			System.out.println(accountNum + df.format(accounts[i].getBalance()));
+		for (int i = 0; i < accounts.length; i++) {
+			System.out.println(accounts[i].toString());
 		}
+
 		System.out.println();
+
 	}
 
 	public static void main(String[] args) {
 		BankAccountTest bank = new BankAccountTest();
 
 		System.out.println("Beginning Account Balances: ");
-		bank.display(bank.accounts);
+		bank.display();
 
 		for (int i = 1; i < 13; i++) {
 			System.out.println("Month " + i + " Account Balances: ");
 			bank.monthlyProcess(bank.accounts);
-			bank.display(bank.accounts);
+			bank.display();
 		}
 	}
 }

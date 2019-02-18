@@ -1,25 +1,16 @@
-import java.util.Random;
 
 public class SavingsAccount extends BankAccount {
-	Random rnd = new Random();
-	
-	private double interestRate = 2+rnd.nextInt(10);
 
+	protected double interestRate = 1 + rnd.nextInt(5);
 
-	public SavingsAccount() {
-	}
-
+	@Override
 	public String toString() {
-
-		String interestRate = super.toString() + ""+this.interestRate+"";
-		
-		return interestRate;
-
+		return "SavingsAccount Interest rate = " + this.interestRate + ", " + super.toString() + " ";
 	}
-	
+
 	@Override
 	public void calculateAndUpdateBalance() {
-		this.balance -= interestRate/100;
+		this.balance -= interestRate / 100;
 	}
 
 }
