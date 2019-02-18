@@ -6,6 +6,11 @@
 *Date: Feb 17, 2019
 */
 /**
+ * This class creates a sub-class of BankAccount.
+ * That initializes a interest rate. Has a toString
+ * that prints the interest rate and parent class toString.
+ * Has a method that calculates and updates accounts balance
+ * by subtracting the interest rate.
  * @author maid0017
  * @version 1.0
  * @since 2019/02/17

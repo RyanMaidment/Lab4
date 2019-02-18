@@ -6,13 +6,18 @@
 *Date: Feb 17, 2019
 */
 /**
+ * This class creates a sub-class of BankAccount.
+ * That initializes a fee. Has a toString
+ * that prints the fee and parent class toString.
+ * Has a method that calculates and updates accounts balance
+ * by subtracting the fee.
  * @author maid0017
  * @version 1.0
  * @since 2019/02/17
  */
 public class ChequingAccount extends BankAccount {
 
-	protected double fee = 1 + rnd.nextInt(5);
+	protected double fee = 1 + rnd.nextInt(5); //generates a fee between 1-5 dollars.
 
 	/* 
 	 * This returns fee and BankAccounts toString method.
